@@ -22,7 +22,7 @@ export class TicketsService {
     return tickets;
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     const ticket = await this.ticketModel.findOne({ _id: id }).exec();
     return ticket;
   }

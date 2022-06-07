@@ -10,19 +10,21 @@ export class TicketsGateway {
   constructor(private readonly ticketsService: TicketsService) { }
 
   @SubscribeMessage('createTicket')
-  create(@MessageBody() createTicketDto: CreateTicketDto): WsResponse<string> {
+  async create(@MessageBody() createTicketDto: CreateTicketDto): Promise<WsResponse<string>> {
     this.ticketsService.create(createTicketDto)
     return { event: 'createTicketClient', data: 'created' };
   }
 
   @SubscribeMessage('findAllTickets')
-  findAll() {
-    return this.ticketsService.findAll();
+  async findAll(): Promise<WsResponse<any>> {
+
+    return { event: 'findAllTicketsClient', data: await this.ticketsService.findAll() };
   }
 
   @SubscribeMessage('findOneTicket')
-  findOne(@MessageBody() id: number) {
-    return this.ticketsService.findOne(id);
+  async findOne(@MessageBody() { id }: { id: string }): Promise<WsResponse<any>> {
+
+    return { event: 'findOneTicketClient', data: await this.ticketsService.findOne(id) };
   }
 
   @SubscribeMessage('updateTicket')
