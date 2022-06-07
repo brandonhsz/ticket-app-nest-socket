@@ -24,49 +24,69 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is a ticket administration app, this app is created using nestjs framework and found with socketIo and MongoDB, 
 
 ## Installation
 
 ```bash
-$ npm install
+$ yarn
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+$ yarn test
 
 # e2e tests
-$ npm run test:e2e
+$ yarn test:e2e
 
 # test coverage
-$ npm run test:cov
+$ yarn test:cov
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+# Mock Server
 
-## Stay in touch
+### Create
+<pre>event: createTicket</pre>
+<pre>
+  {
+    title: string;
+    description: string;
+    status: string;
+    priority: string;
+  }
+</pre>
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Find
+<pre>event: findAllTickets</pre>
+<pre>
+  {
+    nothing
+  }
+</pre>
+
+### FindOne
+<pre>event: findOneTicket </pre>
+<pre>
+  {
+    nothing
+  }
+</pre>
 
 ## License
 
