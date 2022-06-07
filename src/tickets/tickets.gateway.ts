@@ -13,7 +13,7 @@ export class TicketsGateway {
   @SubscribeMessage('createTicket')
   async create(@MessageBody() createTicketDto: CreateTicketDto) {
     console.log("create");
-    this.ticketsService.create(createTicketDto)
+    await this.ticketsService.create(createTicketDto)
     return this.wss.emit('ticket', await this.ticketsService.findAll());
   }
 
@@ -22,6 +22,7 @@ export class TicketsGateway {
     console.log("findAll");
     return this.wss.emit('ticket', await this.ticketsService.findAll());
   }
+
 
   @SubscribeMessage('findOneTicket')
   async findOne(@MessageBody() { id }: { id: string }) {
