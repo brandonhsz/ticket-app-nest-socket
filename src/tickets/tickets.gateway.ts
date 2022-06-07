@@ -1,30 +1,35 @@
-import { WebSocketGateway, SubscribeMessage, MessageBody, WsResponse } from '@nestjs/websockets';
+import { WebSocketGateway, SubscribeMessage, MessageBody, WsResponse, ConnectedSocket, WebSocketServer, } from '@nestjs/websockets';
 import { TicketsService } from './tickets.service';
 import { CreateTicketDto } from './dto/create-ticket.dto';
 import { UpdateTicketDto } from './dto/update-ticket.dto';
+import { Socket, Server } from 'socket.io';
 
 @WebSocketGateway({
+  namespace: '/tickets',
   cors: true,
 })
 export class TicketsGateway {
   constructor(private readonly ticketsService: TicketsService) { }
 
+  @WebSocketServer() wss: Server
+
   @SubscribeMessage('createTicket')
-  async create(@MessageBody() createTicketDto: CreateTicketDto): Promise<WsResponse<string>> {
+  async create(@MessageBody() createTicketDto: CreateTicketDto) {
+    console.log("create");
     this.ticketsService.create(createTicketDto)
-    return { event: 'createTicketClient', data: 'created' };
+    return this.wss.emit('ticket', await this.ticketsService.findAll());
   }
 
   @SubscribeMessage('findAllTickets')
-  async findAll(): Promise<WsResponse<any>> {
-
-    return { event: 'findAllTicketsClient', data: await this.ticketsService.findAll() };
+  async findAll() {
+    console.log("findAll");
+    return this.wss.emit('ticket', await this.ticketsService.findAll());
   }
 
   @SubscribeMessage('findOneTicket')
-  async findOne(@MessageBody() { id }: { id: string }): Promise<WsResponse<any>> {
-
-    return { event: 'findOneTicketClient', data: await this.ticketsService.findOne(id) };
+  async findOne(@MessageBody() { id }: { id: string }) {
+    console.log("findOne");
+    return this.wss.emit('ticket', await this.ticketsService.findOne(id));
   }
 
   @SubscribeMessage('updateTicket')
