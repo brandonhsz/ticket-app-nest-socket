@@ -4,10 +4,7 @@ import { CreateTicketDto } from './dto/create-ticket.dto';
 import { UpdateTicketDto } from './dto/update-ticket.dto';
 import { Socket, Server } from 'socket.io';
 
-@WebSocketGateway({
-  namespace: '/tickets',
-  cors: true,
-})
+@WebSocketGateway({ namespace: 'tickets', cors: true })
 export class TicketsGateway {
   constructor(private readonly ticketsService: TicketsService) { }
 
