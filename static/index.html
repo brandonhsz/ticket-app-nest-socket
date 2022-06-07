@@ -1,0 +1,303 @@
+<html>
+
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div id='content'>
+    <p align="center">
+      <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200"
+          alt="Nest Logo" /></a>
+    </p>
+    <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building
+      efficient and scalable server-side applications.</p>
+    <!-- <pre><code>&lt;p align="center"&gt; -->
+    </code></pre>
+    <!-- <p><a href="https://www.npmjs.com/~nestjscore" target="_blank"><img
+          src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a><br />
+      <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img
+          src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a><br />
+      <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img
+          src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a><br />
+      <a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img
+          src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a><br />
+      <a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img
+          src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a><br />
+      <a href="https://discord.gg/G7Qnnhy" target="_blank"><img
+          src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord" /></a><br />
+      <a href="https://opencollective.com/nest#backer" target="_blank"><img
+          src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a><br />
+      <a href="https://opencollective.com/nest#sponsor" target="_blank"><img
+          src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a><br />
+      <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img
+          src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" /></a><br />
+      <a href="https://opencollective.com/nest#sponsor" target="_blank"><img
+          src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a><br />
+      <a href="https://twitter.com/nestframework" target="_blank"><img
+          src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a><br />
+    </p> -->
+    </p>
+    <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+    <h2 id="description">Description</h2>
+    <p>This is a ticket administration app, this app is created using nestjs framework and found with socketIo and
+      MongoDB,</p>
+    <h2 id="installation">Installation</h2>
+    <pre><code class="bash language-bash">$ yarn
+</code></pre>
+    <h2 id="running-the-app">Running the app</h2>
+    <pre><code class="bash language-bash"># development
+$ yarn start
+
+# watch mode
+$ yarn start:dev
+
+# production mode
+$ yarn start:prod
+</code></pre>
+    <h2 id="test">Test</h2>
+    <pre><code class="bash language-bash"># unit tests
+$ yarn test
+
+# e2e tests
+$ yarn test:e2e
+
+# test coverage
+$ yarn test:cov
+</code></pre>
+    <h1 id="mock-server">Mock Server</h1>
+    <h3 id="create">Create</h3>
+    <pre>event: createTicket</pre>
+    <pre>
+  {
+    title: string;
+    description: string;
+    status: string;
+    priority: string;
+  }
+</pre>
+    <h3 id="find">Find</h3>
+    <pre>event: findAllTickets</pre>
+    <pre>
+  {
+    nothing
+  }
+</pre>
+    <h3 id="findone">FindOne</h3>
+    <pre>event: findOneTicket </pre>
+    <pre>
+  {
+    nothing
+  }
+</pre>
+    <h2 id="license">License</h2>
+    <p>Nest is <a href="LICENSE">MIT licensed</a>.</p>
+
+  </div>
+  <style type='text/css'>
+    body {
+      font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #111;
+      background-color: #fdfdfd;
+      -webkit-text-size-adjust: 100%;
+      -webkit-font-feature-settings: "kern" 1;
+      -moz-font-feature-settings: "kern" 1;
+      -o-font-feature-settings: "kern" 1;
+      font-feature-settings: "kern" 1;
+      font-kerning: normal;
+      padding: 30px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      body {
+        padding: 5px;
+      }
+
+      body>#content {
+        padding: 0px 20px 20px 20px !important;
+      }
+    }
+
+    body>#content {
+      margin: 0px;
+      max-width: 900px;
+      border: 1px solid #e1e4e8;
+      padding: 10px 40px;
+      padding-bottom: 20px;
+      border-radius: 2px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    hr {
+      color: #bbb;
+      background-color: #bbb;
+      height: 1px;
+      flex: 0 1 auto;
+      margin: 1em 0;
+      padding: 0;
+      border: none;
+    }
+
+    /**
+ * Links
+ */
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: #0366d6;
+    }
+
+    a:hover {
+      color: #0366d6;
+      text-decoration: underline;
+    }
+
+    pre {
+      background-color: #f6f8fa;
+      border-radius: 3px;
+      font-size: 85%;
+      line-height: 1.45;
+      overflow: auto;
+      padding: 16px;
+    }
+
+    /**
+  * Code blocks
+  */
+
+    code {
+      background-color: rgba(27, 31, 35, .05);
+      border-radius: 3px;
+      font-size: 85%;
+      margin: 0;
+      word-wrap: break-word;
+      padding: .2em .4em;
+      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+    }
+
+    pre>code {
+      background-color: transparent;
+      border: 0;
+      display: inline;
+      line-height: inherit;
+      margin: 0;
+      overflow: visible;
+      padding: 0;
+      word-wrap: normal;
+      font-size: 100%;
+    }
+
+
+    /**
+ * Blockquotes
+ */
+    blockquote {
+      margin-left: 30px;
+      margin-top: 0px;
+      margin-bottom: 16px;
+      border-left-width: 3px;
+      padding: 0 1em;
+      color: #828282;
+      border-left: 4px solid #e8e8e8;
+      padding-left: 15px;
+      font-size: 18px;
+      letter-spacing: -1px;
+      font-style: italic;
+    }
+
+    blockquote * {
+      font-style: normal !important;
+      letter-spacing: 0;
+      color: #6a737d !important;
+    }
+
+    /**
+ * Tables
+ */
+    table {
+      border-spacing: 2px;
+      display: block;
+      font-size: 14px;
+      overflow: auto;
+      width: 100%;
+      margin-bottom: 16px;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 6px 13px;
+      border: 1px solid #dfe2e5;
+    }
+
+    th {
+      font-weight: 600;
+      padding: 6px 13px;
+      border: 1px solid #dfe2e5;
+    }
+
+    tr {
+      background-color: #fff;
+      border-top: 1px solid #c6cbd1;
+    }
+
+    table tr:nth-child(2n) {
+      background-color: #f6f8fa;
+    }
+
+    /**
+ * Others
+ */
+
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      line-height: 24px;
+      font-weight: 400;
+      font-size: 16px;
+      color: #24292e;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+
+    li {
+      color: #24292e;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    li+li {
+      margin-top: 0.25em;
+    }
+
+    * {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: #24292e;
+    }
+
+    a:visited {
+      color: #0366d6;
+    }
+
+    h1,
+    h2,
+    h3 {
+      border-bottom: 1px solid #eaecef;
+      color: #111;
+      /* Darker */
+    }
+  </style>
+</body>
+
+</html>
